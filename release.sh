@@ -5,7 +5,7 @@
 #   ./release.sh <cask-name> <version> <zip-path> <github-repo>
 #
 # Example:
-#   ./release.sh brooklyn 2.2.0 /path/to/Brooklyn.saver.zip answer24/Brooklyn
+#   ./release.sh brooklyn 2.2.0 /path/to/Brooklyn.saver.zip barrybarrywu/Brooklyn
 
 set -euo pipefail
 
@@ -16,7 +16,7 @@ GITHUB_REPO="${4:-}"
 
 if [[ -z "$CASK_NAME" || -z "$VERSION" || -z "$ZIP_PATH" || -z "$GITHUB_REPO" ]]; then
     echo "Usage: $0 <cask-name> <version> <zip-path> <github-repo>"
-    echo "Example: $0 brooklyn 2.2.0 ./Brooklyn.saver.zip answer24/Brooklyn"
+    echo "Example: $0 brooklyn 2.2.0 ./Brooklyn.saver.zip barrybarrywu/Brooklyn"
     exit 1
 fi
 
@@ -65,5 +65,5 @@ git push
 
 echo ""
 echo "Done. Install / upgrade with:"
-echo "  brew install --cask answer24/tap/${CASK_NAME}"
-echo "  brew upgrade --cask answer24/tap/${CASK_NAME}"
+echo "  brew install --cask barrybarrywu/tap/${CASK_NAME}"
+echo "  brew upgrade --cask barrybarrywu/tap/${CASK_NAME}"
